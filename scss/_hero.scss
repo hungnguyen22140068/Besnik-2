@@ -1,0 +1,352 @@
+@use "./mixin";
+
+.hero {
+  padding: 168px 0 105px;
+
+  @include mixin.screen(sm) {
+    padding: 117px 0 50px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 0 136px;
+
+    @include mixin.screen(xxl) {
+      flex-direction: column;
+      gap: 100px 0;
+    }
+
+    @include mixin.screen(md) {
+      gap: 50px 0;
+    }
+  }
+
+  &__content {
+    width: 39%;
+    flex-shrink: 0;
+
+    @include mixin.screen(xxl) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  &__caption {
+    color: #767e7e;
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+
+    @include mixin.screen(xxl) {
+      text-align: center;
+    }
+  }
+
+  &__heading {
+    color: #0d1111;
+    font-size: 6.1rem;
+    font-weight: 700;
+    line-height: 116.129%;
+    margin-bottom: 48px;
+
+    @include mixin.screen(xxl) {
+      text-align: center;
+    }
+
+    @include mixin.screen(sm) {
+      font-size: 4rem;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__desc {
+    width: 81%;
+    font-size: 1.8rem;
+
+    @include mixin.screen(xxl) {
+      text-align: center;
+    }
+
+    @include mixin.screen(sm) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__line {
+    display: flex;
+    align-items: center;
+    gap: 0 50px;
+    margin-top: 52px;
+
+    @include mixin.screen(sm) {
+      gap: 0 25px;
+      margin-top: 20px;
+    }
+  }
+
+  &__btn {
+    min-width: 186px;
+
+    @include mixin.screen(sm) {
+      padding: 0 10px;
+      min-width: 126px;
+      height: 50px;
+    }
+  }
+
+  &__plays {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0px 22px 50px 0px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.5s linear;
+
+    &:hover {
+      box-shadow: 0px 10px 80px rgba(0, 0, 0, 0.2);
+    }
+
+    @include mixin.screen(sm) {
+      width: 45px;
+      height: 45px;
+      box-shadow: 0px 22px 50px 0px rgba(0, 0, 0, 0.13);
+    }
+
+    &-play {
+      width: 14px;
+      height: 18px;
+      object-fit: cover;
+      margin-left: 5px;
+    }
+  }
+
+  &__media {
+    position: relative;
+
+    @include mixin.screen(xl) {
+      width: 100%;
+    }
+
+    @include mixin.screen(xl) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__imgs {
+    display: block;
+    width: 576px;
+    height: 631px;
+    background: #e0f7f6;
+
+    @include mixin.screen(md) {
+      border-radius: 16px;
+      height: 540px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__card {
+    &:hover {
+      box-shadow: 0px 10px 80px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__course {
+    position: absolute;
+    top: 149px;
+    left: -40px;
+    display: flex;
+    align-items: center;
+    gap: 0 16px;
+    padding: 18px 25px;
+    width: 157px;
+    border-radius: 18px;
+    background: #fefefd;
+    box-shadow: 0px 10px 80px 0px rgba(0, 0, 0, 0.05);
+
+    @include mixin.screen(xl) {
+      left: 133px;
+    }
+
+    @include mixin.screen(lg) {
+      left: 18px;
+    }
+
+    @include mixin.screen(md) {
+      top: 2px;
+      left: 2px;
+      padding: 10px 17px;
+    }
+  }
+
+  &__book {
+    position: relative;
+    width: 36px;
+    height: 40px;
+    flex-shrink: 0;
+    background: #ff8282;
+    border-radius: 4px 2px 2px 4px;
+
+    &::after {
+      position: absolute;
+      top: 28px;
+      left: 4px;
+      content: "";
+      display: block;
+      width: 28px;
+      height: 4px;
+      background: #fff;
+      border-radius: 99px;
+    }
+  }
+
+  &__title {
+    color: #0d1111;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 149%;
+  }
+
+  &__schedules {
+    position: absolute;
+    top: 453px;
+    left: -65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 25px 23px;
+    width: 124px;
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0px 10px 80px 0px rgba(0, 0, 0, 0.05);
+
+    @include mixin.screen(xl) {
+      left: 113px;
+    }
+
+    @include mixin.screen(lg) {
+      left: -8px;
+    }
+
+    @include mixin.screen(md) {
+      top: 417px;
+      left: 2px;
+      padding: 9px 27px 17px;
+    }
+
+    @include mixin.screen(sm) {
+      top: 422px;
+      left: 0;
+    }
+  }
+
+  &__our {
+    position: absolute;
+    top: 500px;
+    right: 45px;
+    display: flex;
+    flex-direction: column;
+    padding: 17px 35px;
+    width: 207px;
+    border-radius: 24px;
+    background: #fefefd;
+    box-shadow: 0px 12px 80px 0px rgba(0, 0, 0, 0.05);
+
+    @include mixin.screen(xl) {
+      right: 223px;
+    }
+
+    @include mixin.screen(lg) {
+      right: 104px;
+    }
+
+    @include mixin.screen(md) {
+      top: 435px;
+      right: 44px;
+    }
+
+    @include mixin.screen(sm) {
+      top: 448px;
+      right: 0;
+      width: 180px;
+    }
+  }
+}
+
+.lines {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+
+  &-line {
+    width: 74px;
+    height: 6px;
+    object-fit: cover;
+
+    &:nth-child(2) {
+      margin-top: 12px;
+    }
+
+    &:nth-child(3) {
+      margin-top: 10px;
+    }
+
+    &:last-child {
+      width: 26px;
+      height: 6px;
+      object-fit: cover;
+      margin-top: 16px;
+    }
+  }
+}
+
+.avatar__groups {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.avatar__group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  background: var(--bg-avatar, #fff);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-left: -7px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.avatar__text {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+}

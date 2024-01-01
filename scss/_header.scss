@@ -1,0 +1,169 @@
+@use "./mixin";
+
+.header {
+  padding: 52px 0 10px;
+  background: #fff;
+
+  @include mixin.screen(sm) {
+    padding-top: 30px;
+  }
+
+  &--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__more {
+    &-icon {
+      width: 20px;
+    }
+  }
+}
+
+.navbar {
+  @include mixin.screen(lg) {
+    position: fixed;
+    inset: 0 40% 0 0;
+    height: auto;
+    overflow-y: auto;
+    background: #fff;
+    overscroll-behavior: contain;
+    padding: 35px 10px 0 20px;
+    translate: -100%;
+    transition: translate 0.5s linear;
+    border-radius: 0 6px 6px 0;
+    z-index: 99;
+  }
+
+  @include mixin.screen(sm) {
+    inset: 0 25% 0 0;
+  }
+
+  &__logo {
+    @include mixin.screen(lg) {
+      margin-left: 10px;
+    }
+  }
+
+  &__list-wrap {
+    margin: 20px 0;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 0 39px;
+
+    @include mixin.screen(lg) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__item {
+    @include mixin.screen(lg) {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    color: #2f3a3b;
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding: 5px 0;
+    transition: all 0.2s linear;
+
+    &:hover,
+    &--active {
+      text-shadow: 1px 0 0 currentColor;
+    }
+
+    @include mixin.screen(lg) {
+      &:hover,
+      &--active {
+        background: #f0f0f0;
+        border-radius: 6px;
+      }
+    }
+
+    @include mixin.screen(lg) {
+      padding: 22px 0 22px 15px;
+    }
+  }
+
+  &__overlay {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity, visibility;
+    transition-duration: 0.5s;
+
+    @include mixin.screen(lg) {
+      position: fixed;
+      inset: 0;
+      background: rgba($color: #000000, $alpha: 0.4);
+      z-index: 98;
+    }
+  }
+
+  &__checkbox:checked ~ &__overlay {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
+
+  &__checkbox:checked ~ .navbar {
+    translate: 0;
+  }
+}
+
+.act {
+  display: flex;
+  align-items: center;
+
+  &__btn-text {
+    display: flex;
+    align-items: center;
+    color: #494949;
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding: 5px 0;
+
+    &:hover {
+      text-decoration: underline;
+      text-shadow: 1px 0 0 currentColor;
+    }
+  }
+
+  &__btn-border {
+    min-width: 108px;
+    height: 48px;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 6px;
+    border: 1px solid #1ebfc1;
+    color: #1ebfc1;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 0 23px;
+    margin-left: 24px;
+
+    @include mixin.screen(sm) {
+      min-width: 65px;
+      height: 35px;
+      margin-left: 0;
+      padding: 0 15px;
+    }
+  }
+}

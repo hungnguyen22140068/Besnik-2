@@ -1,0 +1,68 @@
+@use "./mixin";
+
+.countdown {
+  padding: 265px 0 132px;
+
+  @include mixin.screen(md) {
+    padding: 120px 0;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 200px;
+
+    @include mixin.screen(xl) {
+      gap: 0 130px;
+    }
+
+    @include mixin.screen(xl) {
+      gap: 0 110px;
+    }
+
+    @include mixin.screen(md) {
+      gap: 0 40px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    &:hover .countdown__number {
+      scale: 1.2;
+    }
+  }
+
+  &__number {
+    color: #0d1111;
+    text-align: center;
+    font-size: 6.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    transition: scale 0.4s linear;
+
+    @include mixin.screen(md) {
+      font-size: 4rem;
+    }
+
+    @include mixin.screen(sm) {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__desc {
+    text-align: center;
+    color: #767e7e;
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+
+  @include mixin.screen(md) {
+    font-size: 1.6rem;
+  }
+}

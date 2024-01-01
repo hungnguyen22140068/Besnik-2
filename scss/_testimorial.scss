@@ -1,0 +1,207 @@
+@use "./mixin";
+
+.testimorial {
+  padding: 130px 0;
+
+  @include mixin.screen(md) {
+    padding: 75px 0 100px;
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0 72px;
+  }
+
+  &__content {
+    width: 35.8%;
+    padding-top: 37px;
+    flex-shrink: 0;
+
+    @include mixin.screen(xl) {
+      width: 46.8%;
+    }
+
+    @include mixin.screen(lg) {
+      width: 100%;
+    }
+  }
+
+  &__qoutes {
+    width: 36px;
+    height: 29px;
+    object-fit: cover;
+
+    @include mixin.screen(sm) {
+      width: 25px;
+      height: 20px;
+    }
+  }
+
+  &__text {
+    color: #5d6564;
+    font-size: 3.2rem;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 27px 0 33px;
+
+    @include mixin.screen(sm) {
+      text-align: center;
+      font-size: 2rem;
+      margin: 15px 0 20px;
+    }
+  }
+
+  &__auth {
+    display: flex;
+    align-items: center;
+    gap: 0 5px;
+    color: #070707;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 52px;
+
+    @include mixin.screen(sm) {
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    &-text {
+      color: #767e7e;
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 8px;
+      height: 2px;
+      background: #070707;
+    }
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    gap: 0 30px;
+
+    @include mixin.screen(sm) {
+      justify-content: center;
+    }
+  }
+
+  &__control-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #2ac9bf;
+    cursor: pointer;
+
+    @include mixin.screen(sm) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__media {
+    width: 58%;
+  }
+
+  &__img {
+    &:first-child {
+      position: absolute;
+      top: 0;
+      right: 443px;
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background: #1ebfc1;
+      object-fit: cover;
+
+      @include mixin.screen(xl) {
+        right: 316px;
+      }
+    }
+
+    &:nth-child(2) {
+      position: absolute;
+      top: 19px;
+      right: 0;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: #bf83ff;
+      object-fit: cover;
+
+      @include mixin.screen(xl) {
+        top: 0;
+      }
+    }
+
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5) {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    &:nth-child(3) {
+      position: absolute;
+      bottom: 29px;
+      right: 32px;
+      background: #b1dfdc;
+
+      @include mixin.screen(xl) {
+        right: 0;
+        bottom: 102px;
+      }
+    }
+
+    &:nth-child(4) {
+      position: absolute;
+      top: 403px;
+      right: 389px;
+      background: #ff947a;
+
+      @include mixin.screen(xl) {
+        top: 375px;
+        right: 165px;
+      }
+    }
+
+    &:nth-child(5) {
+      position: absolute;
+      right: 601px;
+      bottom: 140px;
+      background: #ffc147;
+
+      @include mixin.screen(xl) {
+        right: 345px;
+        bottom: 100px;
+      }
+    }
+
+    &:last-child {
+      position: absolute;
+      top: 107px;
+      right: 171px;
+      width: 235px;
+      height: 235px;
+      border-radius: 50%;
+      background: #ff8282;
+      object-fit: cover;
+
+      @include mixin.screen(xl) {
+        right: 93px;
+      }
+    }
+  }
+}

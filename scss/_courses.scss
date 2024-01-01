@@ -1,0 +1,235 @@
+@use "./mixin";
+
+.courses {
+  padding: 65px 0 131px;
+
+  &__top {
+    @include mixin.screen(md) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__caption {
+    color: #767e7e;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+
+    @include mixin.screen(md) {
+      text-align: center;
+    }
+  }
+
+  &__heading {
+    @include mixin.screen(md) {
+      text-align: center;
+    }
+
+    @include mixin.screen(sm) {
+      font-size: 3.6rem;
+    }
+  }
+
+  &__line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include mixin.screen(md) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__desc {
+    width: 40%;
+    margin-top: 19px;
+
+    @include mixin.screen(xxl) {
+      width: 41%;
+    }
+
+    @include mixin.screen(xxl) {
+      width: 50%;
+    }
+
+    @include mixin.screen(lg) {
+      width: 60%;
+    }
+
+    @include mixin.screen(md) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__link {
+    color: #1ebfc1;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration-line: underline;
+  }
+
+  &__link-res {
+    display: block;
+    margin-top: 171px;
+    text-align: center;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 47px;
+    margin-top: 79px;
+
+    @include mixin.screen(xxl) {
+      gap: 0 16px;
+    }
+
+    @include mixin.screen(xl) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 171px 47px;
+    }
+
+    @include mixin.screen(xxl) {
+      gap: 171px 30px;
+    }
+
+    @include mixin.screen(md) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &:hover .courses__imgs-img {
+      scale: 1.2;
+    }
+
+    &:hover .courses__imgs {
+      opacity: 1;
+      background: transparent;
+    }
+  }
+
+  &__imgs {
+    display: block;
+    width: 100%;
+    height: 393px;
+    border-radius: 8px;
+    opacity: 0.65;
+    background: #d0efed;
+    overflow: hidden;
+    transition: opacity, background;
+    transition-duration: 0.3s;
+
+    @include mixin.screen(sm) {
+      height: 300px;
+    }
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: scale 0.3s linear;
+    }
+  }
+
+  &__info {
+    display: block;
+    position: absolute;
+    bottom: -124px;
+    left: 50%;
+    translate: -50%;
+    width: 325px;
+    padding: 18px 35px 29px 25px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0px 16px 90px 0px rgba(0, 0, 0, 0.05);
+
+    @include mixin.screen(xl) {
+      width: 400px;
+    }
+
+    @include mixin.screen(lg) {
+      width: 300px;
+    }
+
+    @include mixin.screen(md) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+      padding: 20px;
+    }
+
+    &-title {
+      color: #0d1111;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+
+      @include mixin.screen(md) {
+        text-align: center;
+      }
+    }
+
+    &-span {
+      color: #767e7e;
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+
+    &-price {
+      color: #0d1111;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+
+      @include mixin.screen(md) {
+        text-align: center;
+      }
+    }
+
+    &-desc {
+      color: #9da6a5;
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 22px;
+
+      @include mixin.screen(md) {
+        text-align: center;
+      }
+    }
+
+    &-line {
+      display: flex;
+      align-items: center;
+      gap: 0 10px;
+    }
+
+    &-number {
+      display: flex;
+      align-items: center;
+      gap: 0 10px;
+      color: #9da6a5;
+      font-size: 1.4rem;
+      font-weight: 400;
+
+      &::before {
+        display: block;
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        background: #1ebfc1;
+      }
+    }
+  }
+}

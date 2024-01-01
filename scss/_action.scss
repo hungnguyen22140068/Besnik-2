@@ -1,0 +1,54 @@
+@use "./mixin";
+
+.action {
+  padding: 76px 0 88px;
+  background: #def6f5;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 0 410px;
+
+    @include mixin.screen(xl) {
+      gap: 0 300px;
+    }
+
+    @include mixin.screen(lg) {
+      flex-direction: column;
+      gap: 35px 0;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 18px;
+
+    @include mixin.screen(lg) {
+      text-align: center;
+    }
+
+    @include mixin.screen(sm) {
+      font-size: 3rem;
+    }
+  }
+
+  &__desc {
+    color: #767e7e;
+    font-size: 1.8rem;
+    font-weight: 400;
+
+    @include mixin.screen(lg) {
+      text-align: center;
+    }
+
+    @include mixin.screen(sm) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__btn {
+    @include mixin.screen(sm) {
+      padding: 0 30px;
+      height: 55px;
+    }
+  }
+}

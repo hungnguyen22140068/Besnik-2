@@ -1,0 +1,21 @@
+@use "./mixin";
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 108px;
+  height: 68px;
+  border-radius: 14px;
+  background: #1ebfc1;
+  box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.05);
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 0 41px;
+  transition: opacity 0.5s linear;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
